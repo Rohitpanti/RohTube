@@ -1,7 +1,9 @@
 
 # Rohtube
 
-This is a Youtube Clone Made using MongoDB,Express,React and Nodejs.
+This YouTube clone is a web application developed using MongoDB, Express, React, Nodejs, Firebase, and Redux Toolkit. The application provides similar functionalities as YouTube, allowing users to upload, watch, like, and comment on videos.
+
+Overall, this YouTube clone provides a modern and efficient user experience, thanks to the use of these cutting-edge technologies. It's a great example of how web development has evolved to create more responsive and user-friendly applications.
 
 
 
@@ -19,7 +21,13 @@ This is a Youtube Clone Made using MongoDB,Express,React and Nodejs.
 
 **Backend:** ExpressJS,Nodejs
 
-**Storage:** MongoDB
+**Storage:** MongoDB,Firebase
+
+## Features
+
+- Light/dark mode toggle
+- Fullscreen mode
+
 ## Run Locally
 
 Download The Zip File  or  Clone the project
@@ -51,6 +59,12 @@ Start the server
 ```
 
 make sure you are connected to mongoDB.
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env.local file
+
 
 
 ## API Reference
