@@ -65,7 +65,7 @@ const Comments = ({videoId}) => {
 
     const handleComment = async(e) =>{
       e.preventDefault();
-      window.location.reload();
+      window.location.reload();// its not ideal to do but due to time scarcity i had too trying to make this with redux
       const headers = {
         "desc" : commentInput,
         videoId : videoId,
