@@ -122,6 +122,7 @@ const VideoFrame = styled.video`
 const Video = () => {
   const {currentUser} = useSelector((state)=>state.user);
   const {currentVideo} = useSelector((state)=>state.video);
+  const [sharedtext, setSharedtext] = useState('Share');
   const dispatch =useDispatch();
 
   const path=useLocation().pathname.split("/")[2]
@@ -171,6 +172,16 @@ const Video = () => {
     dispatch(subscription(channel._id))
   }
 
+  const handleShare = ()=>{
+    setSharedtext("Copied");
+    const sharedtext=window.location.href;
+    navigator.clipboard.writeText(sharedtext);
+    setTimeout(() => {
+      setSharedtext("Share");
+    },2000);
+  }
+
+
   return (
     <Container>
       <Content>
@@ -188,7 +199,7 @@ const Video = () => {
               {currentVideo.dislikes?.includes(currentUser._id) ? (<ThumbDown />) : (<ThumbDownOffAltOutlinedIcon />)} {" "} {currentVideo.dislikes?.length}
               </Button>
             <Button>
-              <ReplyOutlinedIcon /> Share
+              <ReplyOutlinedIcon onClick={handleShare}/> {sharedtext}
             </Button>
             <Button>
               <AddTaskOutlinedIcon /> Save

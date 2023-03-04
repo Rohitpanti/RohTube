@@ -87,17 +87,18 @@ const SignIn = () => {
   };
 
   const signInWithGoogle=async()=>{
+    dispatch(loginStart())
     signInWithPopup(auth,provider).then((result) => {
-      dispatch(loginStart())
-      axios.post("http://localhost:8800/api/auth/google",{withCredentials : true},{
+      axios.post("http://localhost:8800/api/auth/google",{
         name:result.user.displayName,
         email:result.user.email,
         img:result.user.photoURL,
-      }).then((res)=>{
+      },{withCredentials : true}).then((res)=>{
         dispatch(loginSuccess(res.data))
       })
     }).catch(error=>{
-      dispatch(loginFailure())
+      dispatch(loginFailure());
+      console.log(error);
     });
   }
   return (

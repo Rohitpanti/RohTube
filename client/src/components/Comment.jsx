@@ -50,7 +50,6 @@ const Comment = ({comment}) => {
     fetchComment();
   },[comment.userId])
 
-
   return (
     <Container>
       <Avatar src={channel.img} />
